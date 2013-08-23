@@ -1,17 +1,32 @@
 library(shiny)
 
-# 001 class example ui.R
-# define UI for miles per gallon application
-
+# Define UI for dataset viewer application
 shinyUI(pageWithSidebar(
 
-# Application title
+  # Application title
+  headerPanel("Salary Analysis Tool"),
 
-  headerPanel("Miles Per Gallon"), 
+  # Sidebar with controls to provide a caption, select a dataset, and 
+  # specify the number of observations to view. Note that changes made
+  # to the caption in the textInput control are updated in the output
+  # area immediately as you type
+  sidebarPanel(
+    textInput("caption", "Caption:", "OLS Regression Summary"),
 
-  sidebarPanel(), 
+    selectInput("dataset", "Choose a Department:", 
+                choices = c("Accounting Department", "Human Resources Department")),
 
-  mainPanel()
+    numericInput("obs", "Number of observations to view:", 10)
+  ),
 
+
+  # Show the caption, a summary of the dataset and an HTML table with
+  # the requested number of observations
+  mainPanel(
+    h3(textOutput("caption")), 
+
+    verbatimTextOutput("summary"), 
+
+    tableOutput("view")
+  )
 ))
-  
