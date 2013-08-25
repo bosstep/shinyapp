@@ -17,8 +17,8 @@ shinyServer(function(input, output) {
 
   datasetInput <- reactive({
     switch(input$dataset,
-           "Accounting Department" = salaryfake,
-           "Human Resources Department" = salaryfake)           
+           "Accounting Department" = salaryfakeA,
+           "Human Resources Department" = salaryfakeA)           
   })
 
   # The output$caption is computed based on a reactive expression that
