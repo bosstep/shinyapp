@@ -14,12 +14,11 @@ shinyServer(function(input, output) {
   #     identical, then the callers are not notified
   #
   
-dat <- read.csv("https://www.dropbox.com/home/shinyapp/salaryfake.csv",
-stringsAsFactors=TRUE) 
+
   datasetInput <- reactive({
     switch(input$dataset,
-           "Accounting Department" = dat,
-           "Human Resources Department" = dat)           
+           "Accounting Department" = salaryfake,
+           "Human Resources Department" = salaryfake)           
   })
 
   # The output$caption is computed based on a reactive expression that
