@@ -14,7 +14,7 @@ shinyServer(function(input, output) {
   #     identical, then the callers are not notified
   #
   
-dat <- read.csv("http://dl.dropboxusercontent.com/u/7586336/blogger/US%20Presidential%20Elections.csv",
+dat <- read.csv("https://www.dropbox.com/home/shinyapp/salaryfake.csv",
 stringsAsFactors=TRUE) 
   datasetInput <- reactive({
     switch(input$dataset,
