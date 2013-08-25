@@ -13,10 +13,13 @@ shinyServer(function(input, output) {
   #     new result is compared to the previous result; if the two are
   #     identical, then the callers are not notified
   #
+  
+dat <- read.csv("http://dl.dropboxusercontent.com/u/7586336/blogger/US%20Presidential%20Elections.csv",
+stringsAsFactors=TRUE) 
   datasetInput <- reactive({
     switch(input$dataset,
-           "Accounting Department" = salaryfakeA,
-           "Human Resources Department" = salaryfakeB)           
+           "Accounting Department" = dat,
+           "Human Resources Department" = dat)           
   })
 
   # The output$caption is computed based on a reactive expression that
