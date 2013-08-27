@@ -13,12 +13,10 @@ shinyServer(function(input, output) {
   #     new result is compared to the previous result; if the two are
   #     identical, then the callers are not notified
   #
-  
-
   datasetInput <- reactive({
     switch(input$dataset,
            "Accounting Department" = salaryfakeA,
-           "Human Resources Department" = salaryfakeA)           
+           "Human Resources Department" = salaryfakeB)           
   })
 
   # The output$caption is computed based on a reactive expression that
